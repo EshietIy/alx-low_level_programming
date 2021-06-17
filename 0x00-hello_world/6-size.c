@@ -5,15 +5,10 @@
  */
 int main(void)
 {
-char chnum;
-int intnum;
-long lngnum;
-/*long long lngg;*/
-float flt;
-pritf("Size of char : %lu.\n", (unsigned long)(sizeof(chnum));
-pritf("Size of int : %lu.\n", (unsigned long)(sizeof(intnum));
-pritf("Size of long : %lu.\n", (unsigned long)(sizeof(lngnum));
+printf("Size of char : %lu.\n", (sizeof(char));
+printf("Size of int : %lu.\n", (sizeof(int));
+printf("Size of long : %lu.\n", (sizeof(long));
 /*pritf("Size of long long : %lu.\n", (unsigned long)(sizeof(lngg));*/
-pritf("Size of float : %lu.\n", (unsigned long)(sizeof(flt));
+printf("Size of float : %lu.\n", (sizeof(float));
 return (0);
 }
