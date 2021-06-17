@@ -1,0 +1,2 @@
+#!/bin/bashw
+gcc -S $CFILE -o
