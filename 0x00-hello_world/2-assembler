@@ -1,2 +1,2 @@
-#!/bin/bashw
+#!/bin/bash
 gcc -S $CFILE -o
