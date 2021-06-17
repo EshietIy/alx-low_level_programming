@@ -5,15 +5,15 @@
  */
 int main(void)
 {
-char ch;
-int num;
+char chnum;
+int intnum;
 long lngnum;
-long long lngg;
+/*long long lngg;*/
 float flt;
-pritf("Size of char : %lu.\n", (unsigned long)(sizeof(ch));
-pritf("Size of int : %lu.\n", (unsigned long)(sizeof(num));
+pritf("Size of char : %lu.\n", (unsigned long)(sizeof(chnum));
+pritf("Size of int : %lu.\n", (unsigned long)(sizeof(intnum));
 pritf("Size of long : %lu.\n", (unsigned long)(sizeof(lngnum));
-pritf("Size of long long : %lu.\n", (unsigned long)(sizeof(lngg));
+/*pritf("Size of long long : %lu.\n", (unsigned long)(sizeof(lngg));*/
 pritf("Size of float : %lu.\n", (unsigned long)(sizeof(flt));
 return (0);
 }
