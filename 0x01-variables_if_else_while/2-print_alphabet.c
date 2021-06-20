@@ -11,7 +11,7 @@ nl = '\n';
 for (ch = 'a'; ch == 'z'; ch++)
 {
 putchar(ch);
-putchar(nl);
 }
+putchar(nl);
 return (0);
 }
