@@ -1,11 +1,10 @@
 #include <stdio.h>
 /**
 *main - main function print to stderr
-*Return : 1 as error
+*Return: 1 as error
 */
 int main(void)
 {
-	char ch[35] = "and that piece of art is useful\" - Dora Korpar, 2015-10-19";
-	fprintf(stderr,"%s",ch);
-	return (1);
+fprintf(stderr, "%s", "and that piece of art is useful\" - Dora Korpar, 2015-10-19");
+return (1);
 }
