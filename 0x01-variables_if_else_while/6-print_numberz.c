@@ -7,11 +7,10 @@ int main(void)
 {
 int ch;
 char nl;
-nl = '\n';
 for (ch = '0'; ch <= '9'; ch++)
 {
 putchar(ch);
 }
-putchar(nl);
+putchar('\n');
 return (0);
 }
