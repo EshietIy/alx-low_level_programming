@@ -6,7 +6,6 @@
 int main(void)
 {
 int ch;
-char nl;
 for (ch = '0'; ch <= '9'; ch++)
 {
 putchar(ch);
