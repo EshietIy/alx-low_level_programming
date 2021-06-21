@@ -11,7 +11,6 @@ int var3;
 var3 = '1';
 for (var1 = '0'; var1 <= '8'; var1++)
 {
-var3;
 for (var2 = var3; var2 <= '9'; var2++)
 {
 putchar(var1);
