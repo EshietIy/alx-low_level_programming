@@ -15,9 +15,9 @@ for (x = 0; x <= 9; x++)
 {
 while (alph <= 'z')
 {
-_putchar(aplh);
+_putchar(alph);
 alph++;
 }
-_putchar('/n')
+_putchar('/n');
 }
 }
