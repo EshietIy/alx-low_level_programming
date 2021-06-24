@@ -1,12 +1,14 @@
-#include "holbreton.h"
+#include "holberton.h"
+
 /**
- *main - runs function that checks if int is + or -
- *Return:0
- */
+* main - tests function that prints if integer is positive or negative
+* Return: 0
+*/
+
 int main(void)
 {
 int i;
-i = -8;
+i = 58;
 positive_or_negative(i);
 return (0);
 }
