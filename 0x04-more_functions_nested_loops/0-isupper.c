@@ -5,7 +5,7 @@
  *@c: parameter for _isupper
  *Return: 1 or 0
  */
-int _isupper(int c);
+int _isupper(int c)
 {
 int r;
 if (isupper(c))
