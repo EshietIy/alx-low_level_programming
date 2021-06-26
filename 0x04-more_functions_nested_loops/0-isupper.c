@@ -1,7 +1,7 @@
 #include "holberton.h"
 #include <ctype.h>
 /**
- *_isupgper - checks if c is upper case
+ *_isupper - checks if c is upper case
  *@c: parameter for _isupper
  *Return: 1 or 0
  */
