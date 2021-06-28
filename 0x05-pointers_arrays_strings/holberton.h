@@ -1,3 +1,4 @@
+void print_array(int *a, int n);
 void puts2(char *str);
 void reset_to_98(int *n);
 void swap_int(int *a, int *b);
@@ -8,3 +9,4 @@ void _print_rev(char *s);
 void rev_string(char *s);
 void puts_half(char *str);
 #include <string.h>
+#include <stdio.h>
