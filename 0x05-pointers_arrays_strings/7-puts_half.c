@@ -16,12 +16,11 @@ if (l % 2 == 0)
 {
 for (i = (l / 2); i <= l; i++)
 putchar(str[i]);
-putchar('\n');
 }
 else
 {
 for (i = (l / 2) + 1; i <= l; i++)
 putchar(str[i]);
-putchar('\n');
 }
+putchar('\n');
 }
