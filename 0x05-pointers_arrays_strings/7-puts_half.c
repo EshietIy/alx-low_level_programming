@@ -15,12 +15,12 @@ l = strlen(str);
 if (l % 2 == 0)
 {
 for (i = (l / 2); i <= l; i++)
-putchar(str[i]);
+_putchar(str[i]);
 }
 else
 {
 for (i = (l / 2) + 1; i <= l; i++)
-putchar(str[i]);
+_putchar(str[i]);
 }
-putchar('\n');
+_putchar('\n');
 }
