@@ -10,15 +10,16 @@
 void puts_half(char *str)
 {
 int l = strlen(str);
-if (l%2 == 0){
-for (int i = (l/2); i <= l;i++)
+if (l % 2 == 0)
+{
+for (int i = (l / 2); i <= l; i++)
 putchar(str[i]);
 putchar('\n');
 }
-else 
+else
 {
-for (int i = (l/2)+1; i <= l;i++)
+for (int i = (l / 2) + 1; i <= l; i++)
 putchar(str[i]);
 putchar('\n');
-}       
+}
 }
