@@ -1,43 +1,27 @@
 #include "holberton.h"
 
 /**
- * _strlen - Returns length of a string
- * @s: Pointer to string
- * Return: Length of c
-*/
-int _strlen(char *s)
-{
-int index;
-index = 0;
-while (s[index] != '\0')
-{
-index++;
-}
-return (index);
-}
-/**
- * *leet - Encodes a string into 1337
- * @str: Pointer to string
- * Return: Pointer to str
-*/
+ * leet - encode string
+ * @str: input string
+ *
+ * Description: encodes a string into 1337
+ * Return: always (0
+ */
+
 char *leet(char *str)
 {
-int len, i;
-char ch;
-len = _strlen(str);
-for (i = 0; i < len; i++)
+int i = 0, k;
+char s[] = "aAeEoOtTlL";
+char s1[] = "4433007711";
+for (; str[i] != '\0'; i++)
 {
-ch = str[i];
-if (ch == 'a' || ch == 'A')
-str[i] = 4 + '0';
-if (ch == 'e' || ch == 'E')
-str[i] = 3 + '0';
-if (ch == 'o' || ch == 'O')
-str[i] = 0 + '0';
-if (ch == 't' || ch == 'T')
-str[i] = 7 + '0';
-if (ch == 'l' || ch == 'L')
-str[i] = 1 + '0';
+for (k = 0; k <= 9; k++)
+{
+if (s[k] == str[i])
+{
+str[i] = s1[k];
+}
+}
 }
 return (str);
 }
