@@ -1,3 +1,4 @@
+har *infinite_add(char *n1, char *n2, char *r, int size_r);
 oid print_number(int n);
 char *rot13(char *str);
 int _strcmp(char *s1, char *s2);
