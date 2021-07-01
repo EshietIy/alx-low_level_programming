@@ -1,3 +1,4 @@
+char *_strncpy(char *dest, char *src, int n);
 char *leet(char *str);
 char *string_toupper(char *str);
 char *cap_string(char *);
