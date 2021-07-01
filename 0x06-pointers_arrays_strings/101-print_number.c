@@ -8,17 +8,29 @@
 
 void print_number(int n)
 {
-int divisor = 1, i, resp;
-if (n < 0)
+int res, temp, expo;
+
+expo = 1;
+/Check negatives/
+if (n >= 0)
+res = n * -1;
+else
 {
+res = n;
 _putchar('-');
-n *= -1;
 }
-for (i = 0; n / divisor > 9; i++, divisor *= 10)
-;
-for (; divisor >= 1; n %= divisor, divisor /= 10)
+
+/Initialize exponent variable/
+temp = res;
+while (temp <= -10)
 {
-resp = n / divisor;
-_putchar('0' + resp);
+expo *= 10;
+temp /= 10;
+}
+/*Main */
+while (expo >= 1)
+{
+_putchar(((res / expo) % 10) * -1 + '0');
+expo /= 10;
 }
 }
