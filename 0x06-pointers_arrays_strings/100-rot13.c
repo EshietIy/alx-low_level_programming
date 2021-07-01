@@ -8,20 +8,24 @@
  * Return: always (0)
  */
 
-char *rot13(char *str)
+char *rot13(char *s)
 {
-int i = 0, j;
-char s[] =  "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-char s1[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
-for (; str[i] != '\0'; i++)
+int i, j;
+char r[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
+char alpha[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+char boolean;
+
+for (i = 0; s[i] != '\0'; i++)
 {
-for (j = 0; j <= 51; j++)
+boolean = 0;
+for (j = 0; alpha[j] != '\0' && boolean == 0; j++)
 {
-if (s[j] == str[i])
+if (s[i] == alpha[j])
 {
-str[i] = s1[j];
+s[i] = r[j];
+boolean = 1;
 }
 }
 }
-return (str);
+return (s);
 }
