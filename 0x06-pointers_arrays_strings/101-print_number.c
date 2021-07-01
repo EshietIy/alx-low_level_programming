@@ -1,9 +1,8 @@
+#include <stdio.h>
 #include "holberton.h"
-
 /**
- * print_number - prints an integer.
- * @n: integer
- * Return: void
+ * print_number - prints a number
+ * @n: Input number
  */
 
 void print_number(int n)
