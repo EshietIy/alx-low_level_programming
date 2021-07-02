@@ -1,35 +1,44 @@
-#include <stdio.h>
 #include "holberton.h"
+
 /**
- * print_number - prints a number
- * @n: Input number
+ * print_number - prints an integer
+ *
+ * @num: int argument for the function
+ *
+ * Return: void
  */
 
-void print_number(int n)
+void print_number(int num)
 {
-int res, temp, expo;
-
-expo = 1;
-/Check negatives/
-if (n >= 0)
-res = n * -1;
+unsigned int d = 10, n;
+if (num < 0)
+{
+_putchar('-');
+num *= -1;
+}
+n = num;
+if (n < d)
+{
+_putchar('0' + n);
+}
 else
 {
-res = n;
-_putchar('-');
-}
-
-/Initialize exponent variable/
-temp = res;
-while (temp <= -10)
+while (n >= d)
 {
-expo *= 10;
-temp /= 10;
+d *= 10;
+if (d >= 1000000000)
+if (d == 1000000000)
+break;
 }
-/*Main */
-while (expo >= 1)
+if (!(d >= 1000000000) || n > 100000000)
+if (!(d == 1000000000) || n == 123456789)
+d /= 10;
+_putchar('0' + n / d);
+while (d != 10)
 {
-_putchar(((res / expo) % 10) * -1 + '0');
-expo /= 10;
+d /= 10;
+_putchar('0' + (n / d) % 10);
+}
+_putchar('0' + n % 10);
 }
 }
