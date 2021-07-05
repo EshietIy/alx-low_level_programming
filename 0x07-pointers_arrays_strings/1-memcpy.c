@@ -1,22 +1,19 @@
 #include "holberton.h"
 
 /**
- * *_strchr - locates a character in a string
- * @s: string to look in
- * @c: charachter to search for
- *
- * Return: pointer to  the first occurrence of the character c
- * in the string s, or NULL if the character is not found
+ * *_memcpy - copies memory area
+ * @src: area to copy from
+ * @dest: where to copy to
+ * @n: how much byte to copy
+ * Return: pointer to dest
  */
-char *_strchr(char *s, char c)
+
+char *_memcpy(char *dest, char *src, unsigned int n)
 {
-int i;
-for (i = 0; s[i] >= '\0'; i++)
+unsigned int i;
+for (i = 0; i < n; i++)
 {
-if (s[i] == c)
-{
-return ((s + i));
+*(dest + i) = src[i];
 }
-}
-return (0);
+return (dest);
 }
