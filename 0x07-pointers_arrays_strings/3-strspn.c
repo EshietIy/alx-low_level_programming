@@ -11,34 +11,21 @@
 
 unsigned int _strspn(char *s, char *accept)
 {
-int lens, lenacpt, i, x, y, num;
-i = 0;
-num = 0;
-/* get lenght of s */
-while (*(s + i) != '\0')
-{
-lens++;
-i++;
-}
-/* get lenth of accept*/
-i = 0;
-while (*(accept + i) != '\0')
-{
-lenacpt++;
-i++;
-}
-for (x = 0; x < lens; x++)
-{
-for (y = 0; y < lenacpt; y++)
-{
-if (*(s + x) == *(accept + y))
-{
-num++;
-break;
-}
-}
-if (*(s + x) != *(accept + y))
-break;
-}
-return (num);
+int counter = 0, i, j, lastc;
+
+	for (i = 0; *(s + i); i++)
+	{
+		lastc = counter;
+		for (j = 0; *(accept + j); j++)
+		{
+			if (s[i] == accept[j])
+			{
+				counter++;
+				break;
+			}
+		}
+		if (lastc == counter)
+			break;
+	}
+	return (counter);
 }
