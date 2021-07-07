@@ -38,3 +38,17 @@ int checker(char *s, int l, int i)
 	}
 	return (1);
 }
+/**
+ * is_palindrome - returns 1 if a string is a palindrome and 0 if not
+ *
+ * @s: strign to check
+ *
+ * Return: returns 1 if a string is a palindrome and 0 if not
+ */
+
+int is_palindrome(char *s)
+{
+	if (_strlen(s) == 0)
+		return (1);
+	return (checker(s, _strlen(s), 0));
+}
