@@ -7,8 +7,8 @@
  */
 int main(int argc, char *argv[])
 {
-if ((*argv)||(argc > 0))
-printf("%d", argc);
+if ((*argv) || (argc > 0))
+printf("%d", argc - 1);
 printf("\n");
 return (0);
 }
