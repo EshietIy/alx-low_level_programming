@@ -7,7 +7,7 @@
  */
 int main(int argc, char *argv[])
 {
-if (*argv)
+if ((*argv)||(argc > 0))
 printf("%d", argc);
 printf("\n");
 return (0);
