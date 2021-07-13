@@ -4,6 +4,21 @@
 #include <string.h>
 
 /**
+ * _strlen - find length of a string
+ * @s: string argument
+ * Return: int
+ */
+
+int _strlen(char *s)
+{
+	int size = 0;
+
+	for (; s[size] != '\0'; size++)
+		;
+	return (size);
+}
+
+/**
  * argstostr - concatenates all the arguments
  * @ac: input argument
  * @av: input argument
@@ -13,43 +28,27 @@
 
 char *argstostr(int ac, char **av)
 {
-int x, j, v = 0;
-int len = 1;
-char *str;
+	int i = 0, sizecounter = 0, j = 0, counter = 0;
+	char *p;
 
-if (ac == 0 || av == NULL)
-{
-return (NULL);
-}
+	if (ac == 0 || av == NULL)
+		return (NULL);
 
-for (x = 0; x < ac; x++)
-{
-for (j = 0; av[x][j] != '\0'; j++)
-{
-len += 1;
-}
-len += 1;
-}
-str = malloc(sizeof(char) * len);
+	for (; i < ac; i++, sizecounter++)
+		sizecounter += _strlen(av[i]);
 
-for (x = 0; x < ac; x++)
-{
-for (j = 0; av[x][j] != '\0'; j++)
-{
-str[v] = av[x][j];
-v++;
-}
-str[v] = '\n';
-v++;
-}
-str[v] = '\0';
+	p = malloc(sizeof(char) * sizecounter + 1);
+	if (p == NULL)
+		return (NULL);
 
-if (str != NULL)
-{
-return (str);
-}
-else
-{
-return (NULL);
-}
+	for (i = 0; i < ac; i++)
+	{
+		for (j = 0; av[i][j] != '\0'; j++, counter++)
+			p[counter] = av[i][j];
+
+		p[counter] = '\n';
+		counter++;
+	}
+	p[counter] = '\0';
+	return (p);
 }
