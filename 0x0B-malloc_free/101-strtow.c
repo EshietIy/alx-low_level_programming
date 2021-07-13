@@ -1,113 +1,76 @@
 #include "holberton.h"
+#include <stdlib.h>
 
 /**
- * _strlen - find length of a string
- * @s: string
- * Return: int
+ * wrdcnt - counts the number of words in a string
+ * @s: string argument to count
+ *
+ * Return: int of number of words
  */
-
-
-int _strlen(char *s)
+int wrdcnt(char *s)
 {
-int size = 0;
-for (; s[size] != '\0'; size++)
-;
-return (size);
+	int i, n = 0;
+
+	for (i = 0; s[i]; i++)
+	{
+		if (s[i] == ' ')
+		{
+			if (s[i + 1] != ' ' && s[i + 1] != '\0')
+				n++;
+		}
+		else if (i == 0)
+			n++;
+	}
+	n++;
+	return (n);
 }
 
 /**
- * *str_concat - concatenates two strings
- * @s1: string 1 argument
- * @s2: string 2 argument
- * Return: pointer
+ * strtow - splits a string into words
+ * @str: string argument to split
+ *
+ * Return: pointer to an array of strings
  */
-
-char *str_addChar(char *str, char c)
-{
-int size, i;
-char *m;
-
-size = _strlen(str);
-
-m = malloc((size + 1) * sizeof(char) + 1);
-if (m == 0)
-return (0);
-
-for (i = 0; i <= size; i++)
-m[i] = str[i];
-
-m[i + 1] = c;
-m[i + 2] = '\0';
-
-return (m);
-}
-
-
-/**
- * *nbr_spaces - return the number of occurent of a string
- * @s: string argument to check
- * Return: int
- */
-
-unsigned int nbr_spaces(char *s)
-{
-int i, cmpt = 0;
-
-for (i = 0; s[i + 1] != '\0'; i++)
-{
-if (s[i]  == ' ' && s[i + 1] != ' ')
-cmpt++;
-}
-
-return (cmpt + 1);
-}
-
-
-/**
-  *strtow - split a sentence into multiple words.
-  *@str: the string passed as argument.
-  *Return: tokens
-  */
 char **strtow(char *str)
 {
-int i;
-int spaces = nbr_spaces(str);
-char **tokens = NULL;
-//malloc(sizeof(char *) * (spaces));
-char *token;
-int checkingSpace = 0;
-int word = 0;
+	int i, j, k, l, n = 0, wc = 0;
+	char **w;
 
-if (!tokens)
-{
-printf("Failed");
-return (0);
-}
-	
-
-printf("looping");
-for (i = 0; str[i] != '\0'; i++)
-{
-if (str[i] == ' ')
-{
-if (checkingSpace == 0)
-{
-word++;
-checkingSpace = 1;
-} 
-}
-else
-{
-printf("1");
-token = tokens[word];
-free(tokens[word]);
-str_addChar(token, str[i]);
-checkingSpace = 0;
-}
-
-}
-
-tokens[i] = NULL;
-
-return (tokens);
+	if (str == NULL || *str == '\0')
+		return (NULL);
+	n = wrdcnt(str);
+	if (n == 1)
+		return (NULL);
+	w = (char **)malloc(n * sizeof(char *));
+	if (w == NULL)
+		return (NULL);
+	w[n - 1] = NULL;
+	i = 0;
+	while (str[i])
+	{
+		if (str[i] != ' ' && (i == 0 || str[i - 1] == ' '))
+		{
+			for (j = 1; str[i + j] != ' ' && str[i + j]; j++)
+				;
+			j++;
+			w[wc] = (char *)malloc(j * sizeof(char));
+			j--;
+			if (w[wc] == NULL)
+			{
+				for (k = 0; k < wc; k++)
+					free(w[k]);
+				free(w[n - 1]);
+				free(w);
+				return (NULL);
+			}
+			for (l = 0; l < j; l++)
+				w[wc][l] = str[i + l];
+			w[wc][l] = '\0';
+			wc++;
+			i += j;
+		}
+		else
+			i++;
+	}
+	return (w);
 }
