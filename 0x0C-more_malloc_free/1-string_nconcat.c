@@ -38,26 +38,18 @@ int _strlen(char *str)
 
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	unsigned int l1, l2, i, j;
-	char *p;
-
-	l1 = s1 != NULL ? _strlen(s1) : 0;
-	l2 = s2 != NULL ? _strlen(s2) : 0;
-	p = malloc(l1 + l2 * sizeof(char));
-
-	if (p == NULL)
-		return (NULL);
-
-	if (n >= l2)
-		n = l2;
-
-	for (i = 0; i < l1; i++)
-	{
-		*(p + i) = s1[i];
-	}
-
-	for (j = 0; j < n; j++)
-		*(p + (i + j)) = s2[j];
-
-	return (p);
+unsigned int lens1, lens2, nofbyt, i, j;
+char *p;
+lens1 = (s1 != NULL) ? _strlen(s1) : 0;
+lens2 = (s2 != NULL) ? _strlen(s2) : 0;
+nofbyt = (n >= lens2) ? lens2 : n;
+p = malloc((lens1 + nofbyt + 1) * sizeof(char));
+if (p == NULL)
+return (NULL);
+for (i = 0; i < lens1; i++)
+p[i] = s1[i];
+for (j = 0; j < nofbyt; j++)
+p[i + j] = s2[j];
+p[i + j] = '\0';
+return (p);
 }
