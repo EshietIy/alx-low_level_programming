@@ -2,8 +2,8 @@
 #include <stdlib.h>
 /**
  * int_index - searches for an integer
- * @array: array to search in
- * @size: number of elements in the array
+ * @array: array argument
+ * @size: number of elements argument
  * @cmp: a pointer to the function to be used to compare values
  * Return: index of the first integer or -1 if none found
  */
