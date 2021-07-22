@@ -11,7 +11,7 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 va_list ptr;
 unsigned int i = 1;
 va_start(ptr, n);
-while (i <= n)
+while (i <= n && n != 0)
 {
 printf("%d", va_arg(ptr, int));
 if (i != n)
