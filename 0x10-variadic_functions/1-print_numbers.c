@@ -19,7 +19,7 @@ if (i != n)
 if (separator == NULL)
 printf(" ");
 else
-printf("%s ", separator);
+printf("%s", separator);
 }
 else
 printf("\n");
