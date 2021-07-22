@@ -7,7 +7,6 @@
 * Return: Always 0 (Success)
 */
 int main(int argc, char *argv[])
-int main(int argc, char *argv[])
 {
 	int (*p)(int, char **) = &main;
 	int b, i;
