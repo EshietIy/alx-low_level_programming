@@ -1,46 +1,36 @@
-#include "3-calc.h"
-#include <stdlib.h>
 #include <stdio.h>
-
+#include <stdlib.h>
+#include "3-calc.h"
 /**
- * main - calculator main
- * @argc: arguments count
- * @argv: arguments array
- * Return: if the number of arguments is wrong, print Error,
- * followed by a new line, and exit with the status 98
- * if the operator is none of the above, print Error,
- * followed by a new line, and exit with the status 99
- * if the user tries to divide (/ or %) by 0, print Error,
- * followed by a new line, and exit with the status 100
+ *main - calculate parametr  base on argument
+ *@argc: number argument passed
+ *@argv: srting arguments
+ *Return: and int
+ * main function calculate two numbers base on the operator passed
  */
-
-
 int main(int argc, char *argv[])
 {
-	int a, b;
-	char *op;
-
-	if (argc != 4)
-	{
-		printf("Error\n");
-		exit(98);
-	}
-
-	a = atoi(argv[1]);
-	b = atoi(argv[3]);
-	op = argv[2];
-	if (get_op_func(op) == NULL || op[1] != '\0')
-	{
-		printf("Error\n");
-		exit(99);
-	}
-
-	if ((*op == '/' && b == 0) || (*op == '%' && b == 0))
-	{
-		printf("Error\n");
-		exit(100);
-	}
-	printf("%d\n", get_op_func(op)(a, b));
-
-	return (0);
+int num1, num2, result;
+char *op;
+if (argc != 4)
+{
+printf("Error\n");
+exit(98);
+}
+op = argv[2];
+num1 = atoi(argv[1]);
+num2 = atoi(argv[3]);
+if (get_op_func(op) == NULL)
+{
+printf("Error\n");
+exit(99);
+}
+if ((*(op) == '/' && num2 == 0) || (*(op)  == '%' && num2  == 0))
+{
+printf("Error\n");
+exit(100);
+}
+result = get_op_func(op)(num1, num2);
+printf("%d\n", result);
+return (0);
 }
