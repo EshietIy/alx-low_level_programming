@@ -21,9 +21,8 @@ printf(" ");
 else
 printf("%s", separator);
 }
-else
-printf("\n");
 i++;
 }
 va_end(ptr);
+printf("\n");
 }
