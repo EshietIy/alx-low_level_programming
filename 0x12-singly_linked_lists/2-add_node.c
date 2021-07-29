@@ -28,8 +28,10 @@ list_t *temp;
 char *string = strdup(str);
 temp = malloc(sizeof(list_t));
 if (temp == NULL || string == NULL)
+{
 free(temp);
 return (NULL);
+}
 temp->str = string;
 temp->next = *head;
 temp->len = _strlen(string);
