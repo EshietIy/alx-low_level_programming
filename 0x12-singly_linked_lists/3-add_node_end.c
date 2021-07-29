@@ -1,7 +1,7 @@
 #include "lists.h"
 /**
  *_strlen - return length of string
- **@s: string to count
+ *@s: string to count
  * Return: the size
  **/
 int _strlen(char *s)
@@ -17,18 +17,18 @@ int _strlen(char *s)
 /**
  *add_node_end - function adds node to end of node
  *@head: address to head
- *@str: string to be populated 
+ *@str: string to be populated
  *Return: list_t
- */
+ **/
 list_t *add_node_end(list_t **head, const char *str)
 {
-  list_t *new_node = (list_t *)malloc(sizeof(list_t)), *tmp = *head;
+list_t *new_node = (list_t *)malloc(sizeof(list_t)), *tmp = *head;
 	char *string = strdup(str);
 
 	if (new_node == NULL || string == NULL)
 	{
-		free(new_node);
-		return (NULL);
+	free(new_node);
+	return (NULL);
 	}
 
 	while (tmp && tmp->next != NULL)
