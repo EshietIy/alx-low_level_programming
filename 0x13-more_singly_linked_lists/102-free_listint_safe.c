@@ -1,26 +1,40 @@
 #include "lists.h"
 
+
 /**
- * find_listint_loop - finds the loop in a linked list.
+ * free_listint_safe -  frees a listint_t list.
  *
- * @head: list head
+ * @h: pointer to head
  *
- * Return: The address of the node where the
- * loop starts, or NULL if there is no loop
+ * Return:  the size of the list that was free’d
  */
 
-listint_t *find_listint_loop(listint_t *head)
+size_t free_listint_safe(listint_t **h)
 {
-listint_t *ptr, *end;
-if (head == NULL)
-return (NULL);
-for (end = head->next; end != NULL; end = end->next)
+listint_t *current = *h, *loopNode = find_listint_loop_h(*h);
+size_t nodeCount = 0;
+int loop = 1;
+if (!h || !(*h))
+return (0);
+for (nodeCount = 0; (*h != loopNode || loop) && *h != NULL;
+*h = current)
 {
-if (end == end->next)
-return (end);
-for (ptr = head; ptr != end; ptr = ptr->next)
-if (ptr == end->next)
-return (end->next);
+nodeCount++;
+current = (*h)->next;
+if (*h == loopNode && loop)
+{
+if (loopNode == loopNode->next)
+{
+free(*h);
+break;
 }
-return (NULL);
+nodeCount++;
+current = current->next;
+free((*h)->next);
+loop = 0;
+}
+free(*h);
+}
+*h = NULL;
+return (nodeCount);
 }
