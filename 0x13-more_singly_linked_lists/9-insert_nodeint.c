@@ -39,5 +39,7 @@ break;
 prev = next;
 next = next->next;
 }
+if (!next)
+return (NULL);
 return (new_node);
 }
