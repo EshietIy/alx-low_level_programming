@@ -39,7 +39,9 @@ break;
 prev = next;
 next = next->next;
 }
-if (!next)
+if (!next && (i + 1 == idx))
+next->next = new_node;
+if (!next || idx > i + 1)
 return (NULL);
 return (new_node);
 }
