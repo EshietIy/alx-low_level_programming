@@ -1,6 +1,5 @@
 #include "lists.h"
 
-
 /**
  * free_listint_safe -  frees a listint_t list.
  *
@@ -38,3 +37,4 @@ free(*h);
 *h = NULL;
 return (nodeCount);
 }
+
