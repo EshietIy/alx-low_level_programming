@@ -24,8 +24,16 @@ for (i = 0; next; i++)
 {
 if (idx == i)
 {
+if (idx == 0)
+{
+new_node->next = next;
+*head = new_node;
+}
+else if (idx > 0)
+{
 new_node->next = next;
 prev->next = new_node;
+}
 break;
 }
 prev = next;
