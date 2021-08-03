@@ -1,5 +1,8 @@
 #include "lists.h"
 
+listint_t *find_listint_loop_h(listint_t *head);
+
+
 /**
  * free_listint_safe -  frees a listint_t list.
  *
