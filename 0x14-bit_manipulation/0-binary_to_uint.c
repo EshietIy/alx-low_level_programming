@@ -1,6 +1,4 @@
 #include "main.h"
-
-
 /**
  * binary_to_uint - converts a binary number to an unsigned int.
  *
@@ -24,7 +22,7 @@ i++;
 --i;
 while (i >= 0)
 {
-result += (*(b + i) - '0') * m;
+result += (*(b + i) -'0') * m;
 m *= 2;
 --i;
 }
