@@ -1,4 +1,4 @@
-#include "main.h"
+#include "holberton.h"
 /**
  *read_textfile - a function that read text file and print on stdout
  *@filename: name of file
