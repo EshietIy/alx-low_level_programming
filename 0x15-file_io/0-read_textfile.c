@@ -15,7 +15,7 @@ return (0);
 fd = open(filename, O_RDONLY);
 if (fd == -1)
 return (0);
-buff = malloc(sizeof(letters));
+buff = malloc(letters);
 if (!buff)
 return (0);
 ftable = read(fd, buff, letters);
