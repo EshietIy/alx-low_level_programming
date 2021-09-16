@@ -1,6 +1,6 @@
 #include "lists.h"
 /**
- * print_dlistint - a function that number of element in a dlistint_t
+ * dlistint_len - a function that number of element in a dlistint_t
  *@h: pointer to the first node
  *Return: the number of nodes
  */
