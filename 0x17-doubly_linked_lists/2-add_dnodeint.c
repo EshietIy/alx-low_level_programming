@@ -15,11 +15,11 @@ if (new_node == NULL)
 free(new_node);
 return (NULL);
 }
-if (!head)
-return (new_node);
 new_node->n = n;
 new_node->next = *head;
 new_node->prev = NULL;
+if (*head)
+(*head)->prev = new_node;
 *head = new_node;
 return (new_node);
 }
